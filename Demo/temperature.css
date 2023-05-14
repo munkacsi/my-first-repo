@@ -1,0 +1,72 @@
+.sensor-health {
+    /* Center the content */
+    align-items: top;
+    display: flex;
+
+    width: 250px;
+}
+.sensor-status {
+    /* Background color */
+    background-color: #16a34a;
+    
+
+    /* Rounded border */
+    border-radius: 9999px;
+
+    /* Size */
+    height: 0.5rem;
+    width: 0.5rem;
+
+    /* Spacing */
+    margin-right: 0.5rem;
+
+    outline-style: ridge;
+    outline-color: darkgray;
+    align-items: center;
+    
+}
+.sensor-status-red {
+     /* Background color */
+     background-color: #c9142f;
+    
+
+     /* Rounded border */
+     border-radius: 9999px;
+ 
+     /* Size */
+     height: 0.5rem;
+     width: 0.5rem;
+ 
+     /* Spacing */
+     margin-right: 0.5rem;
+ 
+     outline-style: ridge;
+     outline-color: darkgray;
+     align-items: center;
+}
+.sensor-name {
+    /* Take available width */
+    outline-style: ridge;
+    outline-color: darkgray;
+    width: 200px;
+}
+.sensor-value {
+    flex: 1;
+    outline-style: ridge;
+    outline-color: darkgray;
+    width: 30px;
+}
+.sensor-list {
+    flex: 1;
+    outline-style: ridge;
+    outline-color: darkgray;
+    display: inline-block;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+.thumbnail {
+    flex: 2;
+    width: 500px;
+    display: inline-block;
+    align-items: flex-end;
+}

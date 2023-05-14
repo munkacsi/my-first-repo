@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Welcome to smarthome temperature settings!
+        </title>
+        <link rel="stylesheet" href="temperature.css"> 
+    </head>
+    <body>
+        <div class="sensor-list" id="List_of_sensors">
+            Room Temperatures
+            <div class="sensor-health">
+                <div class="sensor-status"></div>
+                <div class="sensor-name">Living Room</div>
+                <div class="sensor-value">20</div>
+            </div>
+            <div class="sensor-health">
+                <div class="sensor-status"></div>
+                <div class="sensor-name">Bed Room 1</div>
+                <div class="sensor-value">23</div>
+            </div>
+            <div class="sensor-health">
+                <div class="sensor-status"></div>
+                <div class="sensor-name">Bed Room 2</div>
+                <div class="sensor-value">24</div>
+            </div>
+            <div class="sensor-health">
+                <div class="sensor-status"></div>
+                <div class="sensor-name">Bathroom</div>
+                <div class="sensor-value">25</div>
+            </div>
+        </div>
+        <img class="thumbnail" src="alaprajz.jpg">
+        <div>
+            Set Temperature
+        </div>
+        <input type="number" id="Heating" value="19" max="30" min="15" onchange="refresh();">
+    </body>
+    <script>
+        function refresh(){
+            let tempthreshold;
+            let sensor_health;
+            let status;
+            tempthreshold = document.getElementById("Heating").value;
+            console.log(tempthreshold);
+            sensor_health = new Array(document.getElementById("List_of_sensors").getElementsByClassName("sensor-health"));
+            console.log(typeof sensor_health );
+            console.log(sensor_health.isArray);
+            console.log("List of Elemenets");
+            elements = document.getElementById("List_of_sensors").getElementsByClassName("sensor-health");
+            console.log(elements);
+            console.log(elements.length);
+            for (let i = 0; i < elements.length; i++){
+                element = elements[i];
+                console.log("ITTT");
+                console.log(i);
+                console.log(element);
+                console.log(element.getElementsByTagName('div'));
+                console.log(element.getElementsByTagName('div')[2]);
+                console.log(element.getElementsByTagName('div')[2].innerHTML);
+                console.log(typeof element.getElementsByTagName('div')[2]);
+                let temp = element.getElementsByTagName('div')[2].innerHTML;
+                console.log('temperature:');
+                console.log(temp);
+                if(temp < tempthreshold){
+                    
+                    let change_element = element.getElementsByClassName("sensor-status")[0];
+                    console.log("ELEMENT TO CHANGE:");
+                    console.log(change_element);
+                    if(change_element != undefined){
+                        change_element.setAttribute("class", "sensor-status-red");
+                    }
+                }
+                if(temp > tempthreshold){
+                    
+                    let change_element = element.getElementsByClassName("sensor-status-red")[0];
+                    console.log("ELEMENT TO CHANGE:");
+                    console.log(change_element);
+                    if(change_element != undefined){
+                        change_element.setAttribute("class", "sensor-status");
+                    }
+                    
+
+                }
+
+            }           
+            
+        }
+    </script>
+</html>
